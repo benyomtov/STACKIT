@@ -1,0 +1,362 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat';
+    background: linear-gradient(to left, #49d2ff, #e0ffff); /* light blue to lighter blue */
+    height: 98.3vh;
+    color: rgb(88, 124, 245);
+    text-shadow: 1px 1px 1px rgb(255, 253, 113);
+    
+}
+
+.indicators {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 710px;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px;
+    text-align: center;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    gap: 10px;
+    background-color: black;
+    border: 10px solid black;
+    max-width: 710px;
+    box-sizing: border-box;
+    width: 570px;
+}
+
+.grid-item {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    transition: background-color 0.5s ease;
+}
+
+.grid-item.glow {
+    box-shadow: 15px currentColor; /* Glowing effect */
+}
+
+.grid-item.light {
+    background-color: lightgray; /* Light version of the color */
+}
+
+#color-buttons {
+    display: flex;
+    justify-content: center;
+    margin-block: 20px;
+    flex-wrap: wrap;
+}
+
+#color-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    color: white; /* Text color */
+    font-weight: bold; /* Text style */
+    border: 4px solid rgb(63, 62, 62); /* Border color */
+}
+
+#color-buttons button:active {
+    border: 4px solid black;
+    background-color: white;
+    color: black;
+}
+
+#color-buttons button[data-color="red"] { background-color: red; font-size: 40px; }
+
+#color-buttons button[data-color="red"]:active { background-color: rgb(255, 64, 64); font-size: 40px;}
+
+#color-buttons button[data-color="green"] { background-color: green; font-size: 40px;}
+
+#color-buttons button[data-color="green"]:active { background-color: rgb(64, 255, 64); font-size: 40px; }
+
+#color-buttons button[data-color="blue"] { background-color: blue; font-size: 40px;} 
+
+#color-buttons button[data-color="blue"]:active { background-color: rgb(64, 64, 255); color: white; font-size: 40px;}
+
+#color-buttons button[data-color="yellow"] { background-color: yellow; color:black; font-size: 40px; }
+
+#color-buttons button[data-color="yellow"]:active { background-color: rgb(255, 255, 64); color:black; font-size: 40px; }
+
+#color-buttons button:hover {
+    opacity: 0.8;
+}
+
+#turn-indicator {
+    font-size: 36px;
+    text-align: center;
+    margin-inline: 60px;
+    margin-block: 20px;
+    font-weight: bold;
+}
+
+#moves-left {
+    font-size: 34px;
+    text-align: center;
+    margin-inline: 60px;
+    margin-block: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#game-result {
+    font-size: 40px;
+    text-align: center;
+    margin: 20px;
+    color: red;
+    font-weight: bold;
+    display: none;
+}
+
+#point-counter {
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+    text-align: center;
+    margin: 20px;
+    margin-top: 0;
+    width: 100%;
+    max-width: 710px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.counter {
+    font-weight: bold;
+    margin: 0 45px;
+    text-align: center;
+}
+
+#bigger {
+    font-size: 50px;
+}
+
+#rules {
+    font-family: 'Montserrat';
+    background-color: rgb(110, 110, 255);
+    border-radius: 25px;
+    color: rgb(252, 248, 30);
+    text-shadow: 1px 1px 1px green;
+    border: 1px solid rgb(245, 185, 22);
+    font-size: 24px;
+    padding: 7px;
+    position: fixed;
+    bottom: 30px;  /* Distance from the bottom of the viewport */
+    left: 30px;
+}
+
+#rules:active {
+    background-color: rgb(255, 152, 255);
+    
+}
+
+.ps {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#howto h2 {
+    font-size: 36px;
+}
+
+
+/* Media Queries for Tablets */
+@media (max-width: 768px) {
+    .title {
+        font-size: 36px;
+    }
+
+    #grid-container {
+        grid-template-columns: repeat(8, 45px);
+        grid-template-rows: repeat(8, 45px);
+        gap: 5px;
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .grid-item {
+        width: 45px;
+        height: 45px;
+    }
+
+    #color-buttons button {
+        margin: 5px;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    #turn-indicator,
+    #moves-left,
+    #game-result,
+    #point-counter {
+        font-size: 24px;
+    }
+
+    #turn-indicator {
+        margin-inline: 40px;
+        font-size: 26px;
+    }
+
+    #moves-left {
+        margin-inline: 40px;
+    }
+    
+    #point-counter {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .indicators {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .counter {
+        margin-inline: 35px;
+    }
+
+    
+    #game-result {
+        font-size: 36px;
+    }
+
+    #color-buttons button[data-color="red"] { background-color: red; font-size: 30px; }
+
+#color-buttons button[data-color="red"]:active { background-color: rgb(255, 64, 64); font-size: 30px;}
+
+#color-buttons button[data-color="green"] { background-color: green; font-size: 30px;}
+
+#color-buttons button[data-color="green"]:active { background-color: rgb(64, 255, 64); font-size: 30px; }
+
+#color-buttons button[data-color="blue"] { background-color: blue; font-size: 30px;} 
+
+#color-buttons button[data-color="blue"]:active { background-color: rgb(64, 64, 255); color: white; font-size: 30px;}
+
+#color-buttons button[data-color="yellow"] { background-color: yellow; color:black; font-size: 30px; }
+
+#color-buttons button[data-color="yellow"]:active { background-color: rgb(255, 255, 64); color:black; font-size: 30px; }
+
+#bigger {
+    font-size: 38px;
+}
+
+}
+
+#hover {
+    font-family: Honk;
+    background-color: rgb(110, 110, 255);
+    border-radius: 25px;
+    border: 3px solid purple;
+    font-size: 24px;
+    display: none;
+}
+
+#hover:active {
+    background-color: rgb(255, 152, 255);
+    
+}
+
+/* Media Queries for Smartphones */
+@media (max-width: 480px) {
+    .title {
+        font-size: 28px;
+    }
+
+    #grid-container {
+        grid-template-columns: repeat(8, 30px);
+        grid-template-rows: repeat(8, 30px);
+        gap: 5px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .grid-item {
+        width: 30px;
+        height: 30px;
+    }
+
+    #color-buttons {
+        flex-direction: row;
+        align-items: center;
+        font-size: 72px;
+    }
+
+    #color-buttons button {
+        margin: 5px;
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    #turn-indicator,
+    #moves-left,
+    #game-result,
+    #point-counter {
+        font-size: 18px;
+    }
+
+    .counter {
+        margin: 14px;
+    }
+
+    #turn-indicator {
+        margin-inline: 30px;
+        font-size: 26px;
+    }
+
+    #moves-left {
+        margin-inline: 30px;
+        font-size: 24px;
+    }
+
+    #point-counter {
+        font-size: 22px;
+    }
+
+    #game-result {
+        font-size: 28px;
+    }
+
+    #color-buttons button[data-color="red"] { background-color: red; font-size: 20px; }
+
+    #color-buttons button[data-color="red"]:active { background-color: rgb(255, 64, 64); font-size: 20px;}
+    
+    #color-buttons button[data-color="green"] { background-color: green; font-size: 20px;}
+    
+    #color-buttons button[data-color="green"]:active { background-color: rgb(64, 255, 64); font-size: 20px; }
+    
+    #color-buttons button[data-color="blue"] { background-color: blue; font-size: 20px;} 
+    
+    #color-buttons button[data-color="blue"]:active { background-color: rgb(64, 64, 255); color: white; font-size: 20px;}
+    
+    #color-buttons button[data-color="yellow"] { background-color: yellow; color:black; font-size: 20px; }
+    
+    #color-buttons button[data-color="yellow"]:active { background-color: rgb(255, 255, 64); color:black; font-size: 20px; }
+
+    #bigger {
+        font-size: 30px;
+    }
+    
+
+}
+
+
+
+
+
+

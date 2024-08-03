@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>STACK-IT</title>
+    <link rel="icon" href="./assets/favicon.svg" type="svg">
+</head>
+<body>
+    <div id="game-result"></div>
+    <div class="indicators">
+        <div id="turn-indicator">Player 1's Turn</div>
+        <div id="moves-left">Moves Left: 64</div>
+    </div>
+    <div class=""flexbox">
+    <div id="grid-container"></div>
+    </div>
+    <div id="color-buttons">
+        <button  data-color="red">🔥</button>
+        <button data-color="yellow">🌻</button>
+        <button data-color="green">🍃</button>
+        <button data-color="blue">🌊</button>
+    </div>
+    <div id="point-counter">
+        <div class="counter" id="player1-points">Player 1 Points: 0</div>
+        <div class="counter" id="player2-points">Player 2 Points: 0</div>
+    </div>
+
+    <button id="hover">Play Again!</button>
+
+    <button id="rules">How to Play</button>
+    <div id="howto" style="text-align: center;
+        display: none;
+    ">
+        <h2>Objective</h2>
+        <p class="ps">
+            The objective of the game is to have the highest score after 64 turns by strategically placing 3x3 blocks of different colors on an 8x8 grid.
+        </p>
+    
+        <h2>Setup</h2>
+        <p class="ps">
+            The game is played on an 8x8 grid.<br>
+            Each player starts with a score of 0.<br>
+            There are four colors available: red, yellow, green, and blue.
+        </p>
+    
+        <h2>Gameplay</h2>
+        <p class="ps">
+        <span class="headers">Turns:</span> Players take turns placing a 3x3 block on the grid. Each turn, a player can place a block of any of the four colors (red, yellow, green, or blue).<br><br>
+        <span class="headers">Placement:</span> A 3x3 block can be placed anywhere on the grid, even partially outside the boundaries. Only the parts within the grid count.<br><br>
+        <span class="headers">Color Replacement and Scoring:</span><br><br>
+            When a block is placed over existing colored squares, points are scored based on the color of the squares being covered and the color of the new block.<br><br>
+            <span class="headers">Points are awarded as follows when replacing colors:</span><br><br>
+            </p>
+            <p class="ps style="
+            font-size: 18px;
+            
+            "
+            >
+            Red to Yellow: +1 point<br>
+            Red to Green: +2 points<br>
+            Red to Blue: +3 points<br>
+            Red to Red: 0 points<br>
+            Yellow to Red: +3 point<br>
+            Yellow to Green: +1 point<br>
+            Yellow to Blue: +2 points<br>
+            Yellow to Yellow: 0 points<br>
+            Green to Red: +2 points<br>
+            Green to Yellow: +3 point<br>
+            Green to Blue: +1 point<br>
+            Green to Green: 0 points<br>
+            Blue to Red: +1 points<br>
+            Blue to Yellow: +2 points<br>
+            Blue to Green: +3 point<br>
+            Blue to Blue: 0 points</span>
+        </p>
+    
+        <h2>Ending the Game</h2>
+        <p class="ps">
+            The game ends after 64 turns (each player has 32 turns).<br><br>
+            The player with the highest score at the end of 64 turns wins the game.
+        </p>
+        
+        <h2>Additional Rules</h2>
+        <p class="ps">
+        No Adjacent Placement Restriction: There is no restriction on placing a block adjacent to or overlapping a previously placed block.<br><br>
+        Valid Placement: A block can be placed partially outside the grid, but only the parts within the grid count for scoring.<br><br>
+        Turn Indicator: An indicator should be used to show which player's turn it is.<br><br>
+        Score Display: Both players' scores should be displayed and updated in real-time as the game progresses.<br><br>
+        Game End Announcement: At the end of the game, the winner should be announced based on the final scores.
+        </p>
+    </div>
+
+    <script>
+       document.getElementById('rules').addEventListener('click', function() {
+            var rules = document.getElementById('howto');
+            if (howto.style.display === "none" || howto.style.display === "") {
+                howto.style.display = "block";
+            } else {
+                howto.style.display = "none";
+            }
+        });
+    </script>
+    
+
+    <script>
+        document.getElementById('hover').addEventListener('click', function() {
+            location.reload();
+        });
+    </script>
+    
+    <script src="index.js"></script>
+</body>
+</html>
