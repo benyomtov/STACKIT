@@ -175,6 +175,13 @@ body {
     font-size: 36px;
 }
 
+.img {
+    border: 5px solid black;
+    height: auto;
+    width: 20%;
+}
+
+
 
 /* Media Queries for Tablets */
 @media (max-width: 768px) {
@@ -275,6 +282,12 @@ body {
     
 }
 
+.img {
+    border: 5px solid black;
+    height: auto;
+    width: 60%;
+}
+
 /* Media Queries for Smartphones */
 @media (max-width: 480px) {
     .title {
@@ -353,6 +366,12 @@ body {
 
     #bigger {
         font-size: 30px;
+    }
+
+    .img {
+        border: 5px solid black;
+        height: auto;
+        width: 75%;
     }
     
 
